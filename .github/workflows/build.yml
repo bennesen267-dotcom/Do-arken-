@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -o Zefari-Client-Source-1.zip -d proje
+      - run: sed -i 's/net.minecraft.client.render.CameraSubmersionType/net.minecraft.block.enums.CameraSubmersionType/' proje/src/main/java/com/zefari/mixin/BackgroundRendererMixin.java
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
